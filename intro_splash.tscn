@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://intro_splash.gd" type="Script" id=1]
+[ext_resource path="res://Splash.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 800.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Splash" type="Sprite" parent="Panel"]
+position = Vector2( 401.242, 296.963 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 553.988
+margin_top = 551.832
+margin_right = 759.988
+margin_bottom = 565.832
+text = "Splash! Press space to continue."
+__meta__ = {
+"_edit_use_anchors_": false
+}
