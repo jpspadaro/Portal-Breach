@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
-var speed = 20;
+var speed = 100;
 
 signal escaped_monster;
 
@@ -26,6 +26,9 @@ func _physics_process(delta):
 	move_and_collide(Vector2(side_move*delta,speed*delta));
 	# print(self.get_instance_id(), self.position)
 	
-	if (self.position.y > 488 && (self.position.x > 200 && self.position.x < 480)):
+	if ((self.position.y > (576-(125*self.get_scale().y))) && (self.position.x > 200 && self.position.x < 480)):
 		emit_signal("escaped_monster");
 		self.queue_free();
+	
+	if (self.position.x > 775||self.position.x < 0):
+		self.queue_free()

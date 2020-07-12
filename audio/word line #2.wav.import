@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/word line #2.wav-6c71a85e4cc2963a7bf77e63c8c0b780.sample"
+
+[deps]
+
+source_file="res://audio/word line #2.wav"
+dest_files=[ "res://.import/word line #2.wav-6c71a85e4cc2963a7bf77e63c8c0b780.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
