@@ -26,21 +26,22 @@ margin_left = 28.0227
 margin_top = 144.425
 margin_right = 382.023
 margin_bottom = 209.425
-text = "Art, and audio by Rhiannon Spadaro and Dylan Brezicky.
+text = "Art and audio by Rhiannon Spadaro and Dylan Brezicky.
 Design and programming by Jason Spadaro.
 
-Made using Godot."
+Made using Godot for GMTK Game Jam 2020."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Panel"]
-margin_left = 187.537
-margin_top = 280.227
-margin_right = 393.537
-margin_bottom = 294.227
+margin_left = 168.137
+margin_top = 275.916
+margin_right = 392.137
+margin_bottom = 306.916
 rect_scale = Vector2( 2, 2 )
-text = "Press space to continue."
+text = "Kill the monsters. Shoot the portal.
+Press space to continue."
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

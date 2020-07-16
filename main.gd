@@ -9,12 +9,17 @@ extends Node2D
 var monster1_scene = preload("res://MonsterNode2D.tscn")
 var monster2_scene = preload("res://zoclo.tscn")
 var monster3_scene = preload("res://djMon.tscn")
-var death_scene = preload("res://outro_splash.tscn");
+var death_scene = preload("res://outro_splash.tscn")
+var win_scene = preload("res://win_splash.tscn")
+var boulder_scene = preload("res://Boulder.tscn")
 
 var event_timer = 0;
 var wave = 1;
 var monster_rate = 5; #accellerates
 var damage = 0;
+
+var portal_damage = 0;
+var portal_life = 1000000;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,6 +49,18 @@ func new_monster(wave):
 
 	return my_monster
 
+func drop_boulder():
+	var boulder = boulder_scene.instance()
+	var x = rand_range(64,700)
+	var y = rand_range(64,500)
+	boulder.translate(Vector2(x,y))
+	add_child(boulder)
+	
+func damage_portal():
+	portal_damage += 1
+	print("Portal Damaged! :", portal_damage)
+	if portal_damage > portal_life:
+		get_tree().change_scene_to(win_scene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -85,10 +102,13 @@ func _process(delta):
 		wave += 1;
 		monster_rate = monster_rate - .2
 		if (monster_rate < .1): monster_rate = .1
-		print("Monster Rate:", monster_rate)
+		#print("Monster Rate:", monster_rate)
 	
 	if (damage > 300):
 		get_node("FloorMap").set_modulate(Color(.75,0,0,.25))
 		get_node("ui/bottomPanel/info").text = "DANGER -- DAMAGE CRITICAL"
+		if ((damage % 25) == 0):
+			drop_boulder()
+		
 	if (damage > 400):
 		get_tree().change_scene_to(death_scene)

@@ -1,10 +1,15 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=2]
+[gd_resource type="AudioBusLayout" load_steps=3 format=2]
 
 [sub_resource type="AudioEffectFilter" id=1]
 resource_name = "Filter"
 cutoff_hz = 440.0
 resonance = 0.98
 gain = 1.35
+
+[sub_resource type="AudioEffectLowPassFilter" id=2]
+resource_name = "LowPassFilter"
+cutoff_hz = 8000.0
+resonance = 0.2
 
 [resource]
 bus/1/name = "Overheated"
@@ -15,3 +20,11 @@ bus/1/volume_db = 0.0
 bus/1/send = "Master"
 bus/1/effect/0/effect = SubResource( 1 )
 bus/1/effect/0/enabled = true
+bus/2/name = "lazer"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = "Master"
+bus/2/effect/0/effect = SubResource( 2 )
+bus/2/effect/0/enabled = true

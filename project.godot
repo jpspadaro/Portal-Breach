@@ -17,7 +17,9 @@ _global_script_class_icons={
 
 config/name="Portal Breach"
 run/main_scene="res://intro_splash.tscn"
-config/icon="res://icon.png"
+run/disable_stdout=true
+boot_splash/image="res://Splash.png"
+config/icon="res://sprite_assets/Portal Breach Character 2.png"
 
 [autoload]
 
@@ -25,9 +27,14 @@ UserData="*res://addons/github-integration/scripts/user_data.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
 
+[debug]
+
+gdscript/warnings/enable=false
+
 [display]
 
 window/size/width=800
+window/size/resizable=false
 
 [editor_plugins]
 

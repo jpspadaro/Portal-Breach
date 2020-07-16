@@ -28,15 +28,17 @@ func get_input(delta):
 	if Input.is_action_pressed("right"):
 		move_and_collide(Vector2(75,0)*delta);
 		direction=Vector2(1,0);
+	if Input.is_action_just_pressed("attack"):
+		get_node("AudioStreamGunNormal").play(0)
 	if Input.is_action_pressed("attack"):
-		print ("Gun Overheat:",gun_overheat)
+		# print ("Gun Overheat:",gun_overheat)
 		gun_overheat += delta;
 		if (gun_overheat<10):
 			var bullet = preload("res://bullet.tscn").instance()
 			bullet.direction = direction
 			bullet.position = self.position;
 			get_parent().add_child(bullet);
-			get_node("AudioStreamGunNormal").play(0);
+			get_node("AudioStreamGunNormal2").play(0);
 		else:
 			get_node("AudioStreamGunOverheat").play(0);
 

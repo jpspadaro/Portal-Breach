@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://playerBody2D.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://audio/word line #6.wav" type="AudioStream" id=21]
 [ext_resource path="res://audio/word lines #1.wav" type="AudioStream" id=22]
 [ext_resource path="res://audio/word line #4.wav" type="AudioStream" id=23]
+[ext_resource path="res://audio/Lazer blaster.wav" type="AudioStream" id=24]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 11.1693
@@ -202,6 +203,18 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 2/shapes = [  ]
 2/z_index = 0
 
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 24.467
+height = 356.681
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -299,6 +312,10 @@ offset = Vector2( -15, 0 )
 [node name="AudioStreamGunNormal" type="AudioStreamPlayer2D" parent="playerBody2D"]
 stream = ExtResource( 14 )
 
+[node name="AudioStreamGunNormal2" type="AudioStreamPlayer2D" parent="playerBody2D"]
+stream = ExtResource( 24 )
+bus = "lazer"
+
 [node name="AudioStreamGunOverheat" type="AudioStreamPlayer2D" parent="playerBody2D"]
 stream = ExtResource( 14 )
 pitch_scale = 4.0
@@ -311,7 +328,7 @@ cell_size = Vector2( 32, 32 )
 collision_layer = 3
 collision_mask = 15
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 3, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 65536, 1, 0, 65559, 1, 0, 131072, 1, 0, 131095, 1, 0, 196608, 1, 0, 196631, 1, 0, 262144, 1, 0, 262167, 1, 0, 327680, 1, 0, 327703, 1, 0, 393216, 1, 0, 393239, 1, 0, 458752, 1, 0, 458775, 1, 0, 524288, 1, 0, 524311, 1, 0, 589824, 1, 0, 589847, 1, 0, 655360, 1, 0, 655383, 1, 0, 720896, 1, 0, 720919, 1, 0, 786432, 1, 0, 786455, 1, 0, 851968, 1, 0, 851991, 1, 0, 917504, 1, 0, 917527, 1, 0, 983040, 1, 0, 983063, 1, 0, 1048576, 1, 0, 1048599, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 5, 0, 1114121, 2, 0, 1114122, 2, 0, 1114123, 2, 0, 1114124, 2, 0, 1114125, 2, 0, 1114126, 2, 0, 1114127, 4, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 65536, 1, 0, 65559, 1, 0, 131072, 1, 0, 131095, 1, 0, 196608, 1, 0, 196631, 1, 0, 262144, 1, 0, 262167, 1, 0, 327680, 1, 0, 327703, 1, 0, 393216, 1, 0, 393239, 1, 0, 458752, 1, 0, 458775, 1, 0, 524288, 1, 0, 524311, 1, 0, 589824, 1, 0, 589847, 1, 0, 655360, 1, 0, 655383, 1, 0, 720896, 1, 0, 720919, 1, 0, 786432, 1, 0, 786455, 1, 0, 851968, 1, 0, 851991, 1, 0, 917504, 1, 0, 917527, 1, 0, 983040, 1, 0, 983063, 1, 0, 1048576, 1, 0, 1048599, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 5, 0, 1114121, 2, 0, 1114122, 2, 0, 1114123, 2, 0, 1114124, 2, 0, 1114125, 2, 0, 1114126, 2, 0, 1114127, 4, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0 )
 
 [node name="FloorMap" type="TileMap" parent="."]
 position = Vector2( 0, -1 )
@@ -353,4 +370,21 @@ stream = ExtResource( 18 )
 
 [node name="Speach10" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
+
+[node name="PortalHitbox" type="RigidBody2D" parent="."]
+z_index = 2
+collision_layer = 15
+collision_mask = 0
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalHitbox"]
+visible = false
+position = Vector2( 386.368, 24.148 )
+rotation = 1.5708
+z_index = 2
+shape = SubResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PortalHitbox"]
+position = Vector2( 384.01, 13 )
+frames = SubResource( 11 )
 [connection signal="gunOverheat" from="playerBody2D" to="ui/overheatPanel" method="_on_playerBody2D_gunOverheat"]
